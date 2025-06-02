@@ -49,6 +49,7 @@ First, ensure the toolboxes listed in dependencies are included in the `code/` f
 
 ### Step 4: run the analyses
 To run all of the analyses, make sure the MATLAB current folder is set to the folder including `main.m` and then run the `main.m` script.  
+
 Alternatively, analysis scripts can be run individually from the `code/` folder.
 Note that the `aperiodic_memory_set_paths.m` script needs to be run first.
 
