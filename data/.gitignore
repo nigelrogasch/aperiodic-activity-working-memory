@@ -2,4 +2,5 @@
 *
 # Except this file and the extras directory
 !.gitignore
-!/extras/*
+!/extras/
+!extras/*
