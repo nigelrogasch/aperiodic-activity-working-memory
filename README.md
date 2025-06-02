@@ -54,6 +54,5 @@ Alternatively, analysis scripts can be run individually from the `code/` folder.
 Note that the `aperiodic_memory_set_paths.m` script needs to be run first.
 
 ## Contact
-If you require any more information, please contact Nigel Rogasch:
-nigel.rogasch@adelaide.edu.au
-nigel.rogasch@gmail.com
+If you require any more information, please contact Nigel Rogasch via the issues tab:
+[https://github.com/nigelrogasch/aperiodic-activity-working-memory/issues](https://github.com/nigelrogasch/aperiodic-activity-working-memory/issues)
