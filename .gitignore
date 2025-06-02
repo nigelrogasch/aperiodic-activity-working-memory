@@ -8,5 +8,5 @@
 /data/grandAverageL02vL04_Slope.mat
 /data/grandAverageL02vL04_SWN.mat
 /data/pathInfo.mat
-/figures/
-/stats/
+/figures/*
+/stats/*
