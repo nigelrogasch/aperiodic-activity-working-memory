@@ -8,6 +8,9 @@
 % Before running this script, ensure to update the file paths in:
 % aperiodic_memory_set_paths.m
 %
+% Also, make sure the current folder is set to the folder containting
+% main.m
+%
 % Author: Nigel Rogasch
 
 %% Clear the command window, workspace and figures
@@ -59,10 +62,10 @@ run('stats_correlations_aperiodic_precision.m');
 run('stats_correlations_capacity_span.m');
 
 % Permutation statistics correlating aperodic activity with complex span
-run('stats_correlation_aperiodic_span.m');
+run('stats_correlations_aperiodic_span.m');
 
 % Figure 7 correlating aperodic activity with complex span
-run('figure_correlation_aperiodic_span.m');
+run('figure_correlations_aperiodic_span.m');
 
 %% Alpha-band oscillatory power and slow wave ERPs 
 
@@ -100,5 +103,14 @@ run('stats_multiple_regression_capacity_peak.m');
 % and ERPs with complex span
 run('stats_multiple_regression_span_cluster.m');
 run('stats_multiple_regression_span_peak.m');
+
+%% Supplementary analysis
+
+% Supplementary figure 1
+run('figure_aperiodic_task_delay_minus_base.m');
+
+% Supplementary figure 2
+run('stats_aperiodic_task_erp_corrected.m');
+run('figure_aperiodic_task_erp_corrected.m');
 
 %% Finish

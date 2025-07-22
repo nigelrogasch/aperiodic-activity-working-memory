@@ -9,8 +9,8 @@ clc; clear; close all;
 load('pathInfo.mat');
 
 % Load data
-slopeData = load([pathData,'grandAverageL02vL04_Slope.mat']);
-psdData = load([pathData,'grandAverageL02vL04_AlphaChange.mat']);
+slopeData = load([pathData,'grandAverageL02vL04_erpcorrected_Slope.mat']);
+psdData = load([pathData,'grandAverageL02vL04_erpcorrected_AlphaChange.mat']);
 
 % Electrodes to plot
 elec1 = 'FCZ';
@@ -28,12 +28,12 @@ loads = {'L02','L04','L06'};
 
 %% Plot the topoplots
 
-statFiles = {'slope_L02_Delay_Base',...
-    'slope_L04_Delay_Base',...
-    'slope_L06_Delay_Base',...
-    'offset_L02_Delay_Base',...
-    'offset_L04_Delay_Base',...
-    'offset_L06_Delay_Base'};
+statFiles = {'slope_L02_Delay_Base_erpcorrected',...
+    'slope_L04_Delay_Base_erpcorrected',...
+    'slope_L06_Delay_Base_erpcorrected',...
+    'offset_L02_Delay_Base_erpcorrected',...
+    'offset_L04_Delay_Base_erpcorrected',...
+    'offset_L06_Delay_Base_erpcorrected'};
 
 xLeft   = 0.2;
 xMid    = 0.45;
@@ -92,7 +92,7 @@ for topox = 1:length(statFiles)
         text(-0.6, 0.5, 'Exponent', 'FontSize', 16, 'FontWeight', 'bold', 'HorizontalAlignment', 'center', 'Units', 'normalized','Rotation',90);
     elseif topox == 2
         text(0.5, 1.1, 'Load 4', 'FontSize', 14, 'FontWeight', 'bold', 'HorizontalAlignment', 'center', 'Units', 'normalized');
-        text(0.5, 1.4, 'Delay vs. Baseline', 'FontSize', 20, 'FontWeight', 'bold', 'HorizontalAlignment', 'center', 'Units', 'normalized');
+        text(0.5, 1.4, 'Delay vs. Baseline (ERP corrected)', 'FontSize', 20, 'FontWeight', 'bold', 'HorizontalAlignment', 'center', 'Units', 'normalized');
     elseif topox == 3
         text(0.5, 1.1, 'Load 6', 'FontSize', 14, 'FontWeight', 'bold', 'HorizontalAlignment', 'center', 'Units', 'normalized');
     elseif topox == 4
@@ -155,7 +155,7 @@ for x = 1:size(indExp,1)
     plot(indExp(x,:),'.-','color','k'); hold on;
 end
 errorbar([0.8,2.2],mean(indExp,1),[stdExp(1),stdExp(2)],'.','color','b','linewidth',2,'markersize',15);
-set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[0,2.5],'xticklabel',{'Baseline','Delay'},'xticklabelrotation',45,'box','off','tickdir','out','linewidth',2,'fontsize',12);
+set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[0,2.5],'xticklabel',{'Baseline','Delay'},'box','off','tickdir','out','linewidth',2,'fontsize',12);
 ylabel('Exponent');
 text(1.5,2.3,'*','color','r','fontsize',30);
 title([elecName,' exponent']);
@@ -165,7 +165,7 @@ for x = 1:size(indOff,1)
     plot(indOff(x,:),'.-','color','k'); hold on;
 end
 errorbar([0.8,2.2],mean(indOff,1),[stdOff(1),stdOff(2)],'.','color','b','linewidth',2,'markersize',15);
-set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[-1,2.5],'xticklabel',{'Baseline','Delay'},'xticklabelrotation',45,'box','off','tickdir','out','linewidth',2,'fontsize',12);
+set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[-1,2.5],'xticklabel',{'Baseline','Delay'},'box','off','tickdir','out','linewidth',2,'fontsize',12);
 ylabel('Offset');
 title([elecName,' offset']);
 
@@ -216,7 +216,7 @@ for x = 1:size(indExp,1)
     plot(indExp(x,:),'.-','color','k'); hold on;
 end
 errorbar([0.8,2.2],mean(indExp,1),[stdExp(1),stdExp(2)],'.','color','b','linewidth',2,'markersize',15);
-set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[-0.5,2],'xticklabel',{'Baseline','Delay'},'xticklabelrotation',45,'box','off','tickdir','out','linewidth',2,'fontsize',12);
+set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[-0.5,2],'xticklabel',{'Baseline','Delay'},'box','off','tickdir','out','linewidth',2,'fontsize',12);
 ylabel('Exponent');
 title([elecName,' exponent']);
 text(1.5,1.8,'*','color','r','fontsize',30);
@@ -226,7 +226,7 @@ for x = 1:size(indOff,1)
     plot(indOff(x,:),'.-','color','k'); hold on;
 end
 errorbar([0.8,2.2],mean(indOff,1),[stdOff(1),stdOff(2)],'.','color','b','linewidth',2,'markersize',15);
-set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[-1,2.5],'xticklabel',{'Baseline','Delay'},'xticklabelrotation',45,'box','off','tickdir','out','linewidth',2,'fontsize',12);
+set(gca,'xlim',[0.5,2.5],'xtick',[1,2],'ylim',[-1,2.5],'xticklabel',{'Baseline','Delay'},'box','off','tickdir','out','linewidth',2,'fontsize',12);
 ylabel('Offset');
 title([elecName,' offset']);
 text(1.5,2.2,'*','color','r','fontsize',30);
@@ -275,7 +275,7 @@ end
 
 %% Save the figure
 
-print(f,'-dpng',[pathFigures,'figure_aperiodic_task']);
+print(f,'-dpng',[pathFigures,'figure_aperiodic_task_erp_corrected']);
 % saveas(f,[pathFigures,'figure_aperiodic_task'],'png');
 
 

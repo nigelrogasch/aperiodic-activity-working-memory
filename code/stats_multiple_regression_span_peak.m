@@ -41,7 +41,7 @@ ID = ID(LIA);
 % Now make sure the two lists match
 LIB = ismember(IDfact,ID);
 IDfact = IDfact(LIB);
-Behav_data = Behav_data(LIB);
+Behav_data1 = Behav_data(LIB);
 
 %% Load slope data
 load([pathData,'grandAverageL02vL04_Slope.mat']);
@@ -110,6 +110,9 @@ erpMean = mean(erpData(:,chani),2);
 
 % Save the outlier
 outliers.erp = removei;
+
+%% Correct Behav_data
+Behav_data = Behav_data1;
 
 %% Remove outliers
 outliersAll = [outliers.slope;outliers.alpha;outliers.erp];

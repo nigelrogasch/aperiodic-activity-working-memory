@@ -67,7 +67,7 @@ for ti = 1:length(tPeriod)
     % Add figure legend
     if ti == 2
         l = legend('Load 2','','Load 4','','Load 6','box','off','location','southeast');
-        l.IconColumnWidth = 10;
+        l.ItemTokenSize = [10,10];
     end
 
 end

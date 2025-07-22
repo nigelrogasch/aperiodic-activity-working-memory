@@ -9,10 +9,6 @@ clc; clear; close all;
 % Load paths
 load('pathInfo.mat');
 
-%% Load capacity data
-load([pathData,'colourWheelStandardMixture.mat']);
-Behav_data = mean(wmCapacity(:,2:3),2);
-
 %% Load slope data
 load([pathData,'grandAverageL02vL04_Slope.mat']);
 
@@ -77,6 +73,10 @@ erpMean = mean(erpData(:,chani),2);
 
 % Save the outlier
 outliers.erp = removei;
+
+%% Load capacity data
+load([pathData,'colourWheelStandardMixture.mat']);
+Behav_data = mean(wmCapacity(:,2:3),2);
 
 %% Remove outliers
 outliersAll = [outliers.slope;outliers.alpha;outliers.erp];
