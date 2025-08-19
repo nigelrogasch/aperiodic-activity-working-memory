@@ -49,14 +49,14 @@ run('figure_aperiodic_load.m');
 
 % Permutation statistics correlating aperodic activity with working memory
 % capacity
-run('stats_correlations_aperiodic_capacity.m');
+run('stats_correlations_aperiodic_capacity_kcd.m');
 
 % Figure 6 correlating aperodic activity with working memory capacity
-run('figure_correlations_aperiodic_capacity.m');
+run('figure_correlations_aperiodic_capacity_kcd.m');
 
 % Permutation statistics correlating aperodic activity with working memory
 % precision
-run('stats_correlations_aperiodic_precision.m');
+run('stats_correlations_aperiodic_precision_kcd.m');
 
 % Stastitcs corrlating working memory capacity and complex span performance
 run('stats_correlations_capacity_span.m');
@@ -96,8 +96,8 @@ run('figure_erp.m');
 
 % Multiple linear regression analyses between exponent, alpha suppression,
 % and ERPs with working memory capacity
-run('stats_multiple_regression_capacity_cluster.m');
-run('stats_multiple_regression_capacity_peak.m');
+run('stats_multiple_regression_capacity_kcd_cluster.m');
+run('stats_multiple_regression_capacity_kcd_peak.m');
 
 % Multiple linear regression analyses between exponent, alpha suppression,
 % and ERPs with complex span
