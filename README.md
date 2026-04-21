@@ -11,7 +11,7 @@ memory capacity independent of event-related potentials and alpha oscillations.
 Virtue-Griffiths S, Fornito A, Thompson S, Biabani M, Tiego J, Thapa T, Bailey NW, and Rogasch NC
 
 **Paper:**
-TBC
+[https://doi.org/10.1162/IMAG.a.150](https://doi.org/10.1162/IMAG.a.150)
 
 **Preprint:**
 [https://doi.org/10.1101/2022.01.18.476852](https://doi.org/10.1101/2022.01.18.476852)
